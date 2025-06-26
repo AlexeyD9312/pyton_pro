@@ -1,0 +1,3 @@
+first commit
+def fu(a,d):
+   return a+b 
