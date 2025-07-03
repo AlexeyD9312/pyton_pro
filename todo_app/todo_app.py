@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 class Task(db.Model):
     id = db.column(db.Integer, primary_key = True)
     content = db.column(db.string(200), nullable = False)
-    date_created = db.column(db.DateTime, default = datetime.now(datetime.timezone.utc))
+    date_created = db.column(db.DateTime, default = datetime.now())
 
     def __repr__(self):
         return f"<Task {self.id}>"
