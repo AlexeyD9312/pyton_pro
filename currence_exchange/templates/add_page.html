@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Currency{% endblock %}
+
+{% block body %}
+<h2 class="text-xl font-bold mb-4">Add New Currency</h2>
+
+<form method="POST">
+    <label>Currency (EUR / GBP / CNY):</label><br>
+    <input type="text" name="currency" required class="border p-2 mb-4 block w-1/3">
+
+    <label>Price in USD:</label><br>
+    <input type="number" name="price" step="0.01" required class="border p-2 mb-4 block w-1/3">
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+</form>
+
+<a href="{{ url_for('page_add') }}" class="text-blue-600 mt-4 inline-block">← Back</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% for name, entry in latest.items() %}
+    <div>
+        <strong>{{ name }}</strong>: {{ entry.price_in_dollar }} USD ({{ entry.date.strftime('%Y-%m-%d') }})
+        <a href="{{ url_for('edit', id=entry.id) }}" class="text-yellow-600 ml-2">Edit</a>
+
+        <form method="POST" action="{{ url_for('delete', id=entry.id) }}" style="display:inline;">
+            <button type="submit" class="text-red-600 ml-2">Delete</button>
+        </form>
+    </div>
+{% endfor %}
